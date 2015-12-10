@@ -1,6 +1,6 @@
 {
 	"nativescript": {
-		"id": "org.nativescript.InfrascaleElephant",
+		"id": "com.infrascale.whiteelephant",
 		"tns-ios": {
 			"version": "1.5.0"
 		}

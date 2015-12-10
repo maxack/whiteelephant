@@ -1,10 +1,10 @@
 var observable = require("data/observable");
 var imageSourceModule = require("image-source");
 var fileSystemModule = require("file-system");
-var obervableArrayModule = require("data/observable-array");
+var observableArrayModule = require("data/observable-array");
 var enums = require("ui/enums");
 
-var localImagesArray = new observableImagesArray();
+var localImagesArray = new observableArrayModule.ObservableArray();
 var directory = "/res/";
 
 function imageFromSource(imageName) {
@@ -22,23 +22,14 @@ var item8 = {itemImage: imageFromSource("08.jpg")};
 
 localImagesArray.push([item1, item2, item3, item4, item5, item6, item7, item8]);
 
-var HelloWorldModel = (function (_super) {
-    __extends(HelloWorldModel, _super);
-    function HelloWorldModel() {
-        _super.call(this);
-        this.counter = 42;
-        this.set("message", this.counter + " taps left");
-    }
-    HelloWorldModel.prototype.tapAction = function () {
-        this.counter--;
-        if (this.counter <= 0) {
-            this.set("message", "Hoorraaay! You unlocked the NativeScript clicker achievement!");
-        }
-        else {
-            this.set("message", this.counter + " taps left");
-        }
-    };
-    return HelloWorldModel;
-})(observable.Observable);
-exports.HelloWorldModel = HelloWorldModel;
-exports.mainViewModel = new HelloWorldModel();
+var elephantsModel = new observable.Observable();
+
+Object.defineProperty(elephantsModel, "photoItems", {
+    get: function() {
+        return localImagesArray;
+    },
+    enumerable: true,
+    configurable: true
+});
+
+exports.elephantsModel = elephantsModel;
