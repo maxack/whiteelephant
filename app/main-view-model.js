@@ -20,7 +20,7 @@ var item6 = {itemImage: imageFromSource("06.jpg"), itemName: "max"};
 var item7 = {itemImage: imageFromSource("07.jpg"), itemName: "max"};
 var item8 = {itemImage: imageFromSource("08.jpg"), itemName: "max"};
 
-localImagesArray.push([item1, item2, item3, item4, item5, item6, item7, item8]);
+//localImagesArray.push([item1, item2, item3,item6, item7, item8]);
 
 var elephantsModel = new observable.Observable();
 
@@ -31,5 +31,10 @@ Object.defineProperty(elephantsModel, "photoItems", {
     enumerable: true,
     configurable: true
 });
+
+elephantsModel.tapAction = function() {
+    localImagesArray.push(item4);
+    localImagesArray.push(item5);
+};
 
 exports.elephantsModel = elephantsModel;
