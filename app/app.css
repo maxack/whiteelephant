@@ -14,3 +14,10 @@ button {
     color: #284848;
     horizontal-align: center;
 }
+
+Button {
+  background-color: gray;
+  font-size: 20;
+  color: #3BB9FF; 
+  background-image: "./res/white-elephant2.jpg";
+}

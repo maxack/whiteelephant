@@ -56,7 +56,7 @@ Object.defineProperty(elephantsModel, "photoItems", {
 
 elephantsModel.tapAction = function() {
     if (people.length > 0) {
-        localImagesArray.push(people.pop());
+        localImagesArray.unshift(people.pop());
     } 
 };
 
